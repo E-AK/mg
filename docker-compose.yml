@@ -1,0 +1,67 @@
+version: "3.8"
+
+services:
+    nginx:
+        build: ./nginx/
+        restart: always
+        ports:
+            - 80:80
+        volumes:
+            - ./magento/:/var/www/html/
+        networks:
+            - mg
+        environment:
+            - MAGE_ROOT=/var/www/html/
+
+    php:
+        build: ./magento/
+        restart: always
+        volumes:
+            - ./magento/:/var/www/html/
+        networks:
+            - mg
+
+    db:
+        image: mariadb:10.6
+        restart: always
+        environment:
+            MARIADB_USER: magento
+            MARIADB_ROOT_PASSWORD: magento
+            MARIADB_PASSWORD: magento
+            MARIADB_DATABASE: magento
+        networks:
+            - mg
+
+    phpmyadmin:
+        image: phpmyadmin
+        restart: always
+        ports:
+            - 8080:80
+        environment:
+            - PMA_ARBITRARY=1
+        networks:
+            - mg
+
+    rabbitmq:
+        networks:
+            - mg
+        image: rabbitmq:3.11
+        environment:
+            - RABBITMQ_DEFAULT_USER=mg2
+            - RABBITMQ_DEFAULT_PASS=mg2
+
+    redis:
+        networks:
+            - mg
+        image: redis:7.0
+
+    elastics:
+        networks:
+            - mg
+        environment:
+            - discovery.type=single-node
+        image: elasticsearch:7.8.1
+
+networks:
+    mg:
+        driver: bridge
