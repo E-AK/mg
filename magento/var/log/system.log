@@ -1,51 +1,7 @@
-[2024-03-11T17:08:47.501887+00:00] main.ERROR: Could not validate a connection to the OpenSearch. No alive nodes found in your cluster
-#0 /var/www/html/setup/src/Magento/Setup/Model/SearchConfig.php(69): Magento\Setup\Model\SearchConfig->validateSearchEngine()
-#1 /var/www/html/setup/src/Magento/Setup/Model/Installer.php(1210): Magento\Setup\Model\SearchConfig->saveConfiguration(Array)
-#2 [internal function]: Magento\Setup\Model\Installer->installSearchConfiguration(Array)
-#3 /var/www/html/setup/src/Magento/Setup/Model/Installer.php(388): call_user_func_array(Array, Array)
-#4 /var/www/html/setup/src/Magento/Setup/Console/Command/InstallCommand.php(237): Magento\Setup\Model\Installer->install(Array)
-#5 /var/www/html/vendor/symfony/console/Command/Command.php(298): Magento\Setup\Console\Command\InstallCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
-#6 /var/www/html/vendor/symfony/console/Application.php(1040): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
-#7 /var/www/html/vendor/symfony/console/Application.php(301): Symfony\Component\Console\Application->doRunCommand(Object(Magento\Setup\Console\Command\InstallCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
-#8 /var/www/html/vendor/magento/framework/Console/Cli.php(116): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
-#9 /var/www/html/vendor/symfony/console/Application.php(171): Magento\Framework\Console\Cli->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
-#10 /var/www/html/bin/magento(23): Symfony\Component\Console\Application->run()
-#11 {main} [] []
-[2024-03-11T17:12:20.611877+00:00] main.ERROR: No arguments expected for "setup:install" command, got "elasticsearch7".
-#0 /var/www/html/vendor/symfony/console/Input/ArgvInput.php(86): Symfony\Component\Console\Input\ArgvInput->parseArgument('elasticsearch7')
-#1 /var/www/html/vendor/symfony/console/Input/ArgvInput.php(71): Symfony\Component\Console\Input\ArgvInput->parseToken('elasticsearch7', true)
-#2 /var/www/html/vendor/symfony/console/Input/Input.php(55): Symfony\Component\Console\Input\ArgvInput->parse()
-#3 /var/www/html/vendor/symfony/console/Command/Command.php(257): Symfony\Component\Console\Input\Input->bind(Object(Symfony\Component\Console\Input\InputDefinition))
-#4 /var/www/html/vendor/symfony/console/Application.php(1040): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
-#5 /var/www/html/vendor/symfony/console/Application.php(301): Symfony\Component\Console\Application->doRunCommand(Object(Magento\Setup\Console\Command\InstallCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
-#6 /var/www/html/vendor/magento/framework/Console/Cli.php(116): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
-#7 /var/www/html/vendor/symfony/console/Application.php(171): Magento\Framework\Console\Cli->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
-#8 /var/www/html/bin/magento(23): Symfony\Component\Console\Application->run()
-#9 {main} [] []
-[2024-03-11T17:12:57.614215+00:00] main.ERROR: Could not validate a connection to Elasticsearch. No alive nodes found in your cluster
-#0 /var/www/html/setup/src/Magento/Setup/Model/SearchConfig.php(69): Magento\Setup\Model\SearchConfig->validateSearchEngine()
-#1 /var/www/html/setup/src/Magento/Setup/Model/Installer.php(1210): Magento\Setup\Model\SearchConfig->saveConfiguration(Array)
-#2 [internal function]: Magento\Setup\Model\Installer->installSearchConfiguration(Array)
-#3 /var/www/html/setup/src/Magento/Setup/Model/Installer.php(388): call_user_func_array(Array, Array)
-#4 /var/www/html/setup/src/Magento/Setup/Console/Command/InstallCommand.php(237): Magento\Setup\Model\Installer->install(Array)
-#5 /var/www/html/vendor/symfony/console/Command/Command.php(298): Magento\Setup\Console\Command\InstallCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
-#6 /var/www/html/vendor/symfony/console/Application.php(1040): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
-#7 /var/www/html/vendor/symfony/console/Application.php(301): Symfony\Component\Console\Application->doRunCommand(Object(Magento\Setup\Console\Command\InstallCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
-#8 /var/www/html/vendor/magento/framework/Console/Cli.php(116): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
-#9 /var/www/html/vendor/symfony/console/Application.php(171): Magento\Framework\Console\Cli->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
-#10 /var/www/html/bin/magento(23): Symfony\Component\Console\Application->run()
-#11 {main} [] []
-[2024-03-11T17:18:23.191428+00:00] main.ERROR: Could not validate a connection to Elasticsearch. No alive nodes found in your cluster
-#0 /var/www/html/setup/src/Magento/Setup/Model/SearchConfig.php(69): Magento\Setup\Model\SearchConfig->validateSearchEngine()
-#1 /var/www/html/setup/src/Magento/Setup/Model/Installer.php(1210): Magento\Setup\Model\SearchConfig->saveConfiguration(Array)
-#2 [internal function]: Magento\Setup\Model\Installer->installSearchConfiguration(Array)
-#3 /var/www/html/setup/src/Magento/Setup/Model/Installer.php(388): call_user_func_array(Array, Array)
-#4 /var/www/html/setup/src/Magento/Setup/Console/Command/InstallCommand.php(237): Magento\Setup\Model\Installer->install(Array)
-#5 /var/www/html/vendor/symfony/console/Command/Command.php(298): Magento\Setup\Console\Command\InstallCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
-#6 /var/www/html/vendor/symfony/console/Application.php(1040): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
-#7 /var/www/html/vendor/symfony/console/Application.php(301): Symfony\Component\Console\Application->doRunCommand(Object(Magento\Setup\Console\Command\InstallCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
-#8 /var/www/html/vendor/magento/framework/Console/Cli.php(116): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
-#9 /var/www/html/vendor/symfony/console/Application.php(171): Magento\Framework\Console\Cli->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
-#10 /var/www/html/bin/magento(23): Symfony\Component\Console\Application->run()
-#11 {main} [] []
-[2024-03-11T19:56:24.932522+00:00] main.ERROR: SQLSTATE[HY000] [2002] Connection refused [] []
+[2024-03-12T13:44:37.602578+00:00] main.ERROR: There are no commands defined in the "deploy:mode" namespace.
+#0 /var/www/html/vendor/symfony/console/Application.php(701): Symfony\Component\Console\Application->findNamespace('deploy:mode')
+#1 /var/www/html/vendor/symfony/console/Application.php(259): Symfony\Component\Console\Application->find('deploy:mode:set')
+#2 /var/www/html/vendor/magento/framework/Console/Cli.php(116): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 /var/www/html/vendor/symfony/console/Application.php(171): Magento\Framework\Console\Cli->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 /var/www/html/bin/magento(23): Symfony\Component\Console\Application->run()
+#5 {main} [] []
