@@ -8,6 +8,7 @@ use Magento\Framework\App\ActionInterface;
 use Magento\Framework\App\RequestInterface;
 use Magento\Framework\App\ResponseInterface;
 use Magento\Framework\App\RouterInterface;
+use Magento\Framework\App\Action\Forward;
 use Training\TodoList\Controller\TodoList\GetTodoListAction;
 
 /**
@@ -40,16 +41,12 @@ class Router implements RouterInterface
          */
         $identifier = trim($request->getPathInfo(), '/');
 
-        if (strpos($identifier, 'todo') !== false) {
-            $request->setModuleName('todo');
-            $request->setControllerName('todo');
-            $request->setActionName('get');
-            $request->setParams([
-                'first_param' => 'first_value',
-                'second_param' => 'second_value'
-            ]);
+        if (strpos($identifier, 'Training_TodoList') !== false) {
+            $request->setModuleName('a');
+            $request->setControllerName('b');
+            $request->setActionName('c');
 
-            return $this->actionFactory->create(GetTodoListAction::class);
+            return $this->actionFactory->create(Forward::class, ['request' => $request]);
         }
 
         throw new \Exception('Not found', 404);

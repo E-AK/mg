@@ -5,7 +5,7 @@ return [
     ],
     'cache' => [
         'graphql' => [
-            'id_salt' => 'dmPs0x7QklFAjFqA0zD0zt2UTf1q8xqG'
+            'id_salt' => 'q5GSMCSULKxRq6aDbLG1zynbyVcpmxW4'
         ],
         'frontend' => [
             'default' => [
@@ -42,7 +42,7 @@ return [
         'consumers_wait_for_messages' => 1
     ],
     'crypt' => [
-        'key' => 'b73d96258a485cc453c6a35a68f1df05'
+        'key' => '575803a3e7e1af7424d61c063fabdc7f'
     ],
     'db' => [
         'table_prefix' => '',
@@ -68,7 +68,7 @@ return [
         ]
     ],
     'x-frame-options' => 'SAMEORIGIN',
-    'MAGE_MODE' => 'default',
+    'MAGE_MODE' => 'developer',
     'session' => [
         'save' => 'redis',
         'redis' => [
@@ -122,6 +122,6 @@ return [
         'localhost'
     ],
     'install' => [
-        'date' => 'Tue, 12 Mar 2024 13:37:20 +0000'
+        'date' => 'Tue, 12 Mar 2024 16:33:26 +0000'
     ]
 ];
