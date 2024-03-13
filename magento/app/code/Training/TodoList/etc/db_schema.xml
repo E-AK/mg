@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="todo_list">
+        <column
+            xsi:type="int"
+            name="id"
+            padding="10"
+            unsigned="true"
+            nullable="false"
+            identity="true"
+            comment="Primary key"
+        />
+        <column
+            xsi:type="text"
+            name="text"
+            unsigned="true"
+            nullable="false"
+            comment="Text"
+        />
+        <column
+            xsi:type="boolean"
+            name="is_complete"
+            nullable="false"
+            comment="Is Complete"
+        />
+
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+    </table>
+</schema>
