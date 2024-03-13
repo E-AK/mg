@@ -8,11 +8,11 @@ class TodoListCollectionFactory
 {
     /**
      * @param ObjectManagerInterface $objectManager
-     * @param string $instanceName
+     * @param ?string $instanceName
      */
     public function __construct(
         protected ObjectManagerInterface $objectManager,
-        protected string $instanceName,
+        protected ?string $instanceName = TodoListCollection::class,
     ) {
 
     }

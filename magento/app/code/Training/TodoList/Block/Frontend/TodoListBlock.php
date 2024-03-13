@@ -28,6 +28,7 @@ class TodoListBlock extends Template
   public function getTodoList()
   {
     $todoList = $this->todoListCollectionFactory->create();
-    return $todoList->getCollection(); // a
+
+    return $todoList->getItems();
   }
 }

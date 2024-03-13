@@ -1,30 +1,34 @@
 <?php
 
-namespace Training\TodoList\Controller\TodoList;
+namespace Training\TodoList\Controller\Todo;
 
-use Magento\Framework\App\Action\HttpDeleteActionInterface;
+use Magento\Framework\Controller\Result\Redirect;
+use Magento\Framework\App\Action\HttpPostActionInterface;
 use Magento\Framework\App\RequestInterface;
 use Magento\Framework\Message\ManagerInterface;
 use Training\TodoList\Model\TodoList\TodoListCollectionFactory;
+use Magento\Framework\Controller\Result\RedirectFactory;
 
-class CreateItemAction implements HttpDeleteActionInterface
+class Delete implements HttpPostActionInterface
 {
     /**
      * @param TodoListCollectionFactory $todoListCollectionFactory
      * @param RequestInterface $request
+     * @param RedirectFactory $redirectFactory
      */
     public function __construct(
         private TodoListCollectionFactory $todoListCollectionFactory,
         private RequestInterface $request,
-        protected ManagerInterface $messageManager
+        protected ManagerInterface $messageManager,
+        protected RedirectFactory $redirectFactory,
     ) {
 
     }
 
     /**
-     * @inheritdoc
+     * @return Redirect
      */
-    public function execute()
+    public function execute(): Redirect
     {
         $id = $this->request->getParam('id');
         try {
@@ -36,6 +40,10 @@ class CreateItemAction implements HttpDeleteActionInterface
             }
 
             $model->delete();
+
+            $redirect = $this->redirectFactory->create();
+
+            return $redirect->setPath('*/*/get');
         } catch (\Exception $e) {
             $this->messageManager->addError($e->getMessage());
         }

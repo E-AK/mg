@@ -1,1 +1,41 @@
-<p>Hello, World!</p>
+<?php
+
+use Training\TodoList\Block\Frontend\TodoListBlock;
+
+/**
+ * @var TodoListBlock $todoList
+ */
+$todoList = $block->getTodoList();
+
+?>
+
+<div class="todo-list">
+    <form action="/todo/todo/create" method="post">
+        <label for="POST-name">Текст:</label>
+        <input id="text" type="text" name="text" />
+        <input type="submit" value="Добавить" />
+    </form>
+    <ul>
+        <?php if (count($todoList) > 0): ?>
+            <?php foreach ($todoList as $item): ?>
+                <li>
+                    <span>
+                        <?= $item->getText(); ?>
+                    </span>
+                    <?php if ($item->getIsComplete()): ?>
+                        <span style="color: green;">(Completed)</span>
+                    <?php else: ?>
+                        <span style="color: red;">(Pending)</span>
+                    <?php endif; ?>
+                    <form action="/todo/todo/update" method="post">
+                        <input type="hidden" name="id" value="<?= $item->getId() ?>">
+                        <input type="hidden" name="is_checked" value="<?= !$item->getIsComplete() ?>">
+                        <input type="submit" value="<?= !$item->getIsComplete() ? 'Выполнено' : "Не выполнено" ?>" />
+                    </form>
+                </li>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <li>No items found.</li>
+        <?php endif; ?>
+    </ul>
+</div>
