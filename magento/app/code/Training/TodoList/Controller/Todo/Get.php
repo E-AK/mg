@@ -3,29 +3,9 @@
 namespace Training\TodoList\Controller\Todo;
 
 use Magento\Framework\App\Action\HttpGetActionInterface;
-use Magento\Framework\App\RequestInterface;
-use Magento\Framework\View\Result\PageFactory;
+use Training\TodoList\Controller\Get as GetParent;
 
-class Get implements HttpGetActionInterface
+class Get extends GetParent implements HttpGetActionInterface
 {
-    /**
-     * @param PageFactory $pageFactory
-     * @param RequestInterface $request
-     */
-    public function __construct(
-        private PageFactory $pageFactory,
-        private RequestInterface $request
-    ) {
 
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function execute()
-    {
-        // var_dump($this->request->getFullActionName());
-        // exit;
-        return $this->pageFactory->create();
-    }
 }

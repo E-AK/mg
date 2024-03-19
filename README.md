@@ -1,7 +1,7 @@
 # Install
 
 ```
-bin/magento setup:install \
+php bin/magento setup:install \
 --base-url=http://localhost \
 --db-host=db \
 --db-name=magento \
@@ -32,5 +32,9 @@ bin/magento setup:install \
 --session-save-redis-port=6379 \
 --cache-backend-redis-port=6379 \
 --page-cache-redis-port=6379 \
+--amqp-host=rabbitmq \
+--amqp-port=5672 \
+--amqp-user=mg2 \
+--amqp-password=mg2 \
 --cleanup-database
 ```

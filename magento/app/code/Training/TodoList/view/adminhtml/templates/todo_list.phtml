@@ -9,16 +9,13 @@ $todoList = $block->getTodoList();
 
 ?>
 
-<div data-bind="scope: 'todo'">
-    <label for="POST-name">Текст:</label>
-    <input id="new_task" type="text" name="text" data-bind="value: task" />
-    <input type="button" value="Добавить" data-bind="click: create" />
-
-    <ul data-bind="foreach: tasks">
-
-    </ul>
-
-    <!-- <ul id="todo_list">
+<div class="todo-list">
+    <form action="/todo/todo/create" method="post">
+        <label for="POST-name">Текст:</label>
+        <input id="text" type="text" name="text" />
+        <input type="submit" value="Добавить" />
+    </form>
+    <ul>
         <?php if (count($todoList) > 0): ?>
             <?php foreach ($todoList as $item): ?>
                 <li>
@@ -44,20 +41,5 @@ $todoList = $block->getTodoList();
         <?php else: ?>
             <li>No items found.</li>
         <?php endif; ?>
-    </ul> -->
+    </ul>
 </div>
-
-<script type="text/x-magento-init">
-    {
-        "*": {
-            "Magento_Ui/js/core/app": {
-                "components": {
-                    "todo": {
-                        "component": "Training_TodoList/js/todo",
-                        "config": "example"
-                    }
-                }
-            }
-        }
-    }
-</script>

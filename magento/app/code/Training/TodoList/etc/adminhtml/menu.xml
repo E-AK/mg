@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">  
+    <menu>
+        <add
+            id="Training_TodoList::first_level_demo"
+            title="Todo List"
+            module="Training_TodoList"
+            sortOrder="20"
+            resource="Training_TodoList::first_level_demo"
+        />
+            <add
+                id="Training_TodoList::second_level_demo"
+                title="Todo List"
+                module="Training_TodoList"
+                sortOrder="1"
+                action="todoadmin/todo/get"
+                parent="Training_TodoList::first_level_demo"
+                resource="Training_TodoList::second_level_demo"
+            />
+    </menu>
+</config>
