@@ -54,7 +54,10 @@ $todoList = $block->getTodoList();
                 "components": {
                     "todo": {
                         "component": "Training_TodoList/js/todo",
-                        "config": "example"
+                        "createUrl": "/todo/todo/create",
+                        "getUrl": "/todo/todo/todo",
+                        "updateUrl": "/todo/todo/update",
+                        "deleteUrl": "/todo/todo/delete"
                     }
                 }
             }

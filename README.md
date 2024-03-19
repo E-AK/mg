@@ -2,7 +2,7 @@
 
 ```
 php bin/magento setup:install \
---base-url=http://localhost \
+--base-url=http://linux.q-digital.local:8765 \
 --db-host=db \
 --db-name=magento \
 --db-user=magento \

@@ -5,7 +5,7 @@ services:
     build: ./nginx/
     restart: always
     ports:
-      - 80:80
+      - 8765:80
     volumes:
       - ./magento/:/var/www/html/
     networks:
@@ -37,7 +37,7 @@ services:
     image: phpmyadmin
     restart: always
     ports:
-      - 8080:80
+      - 8567:80
     environment:
       - PMA_ARBITRARY=1
     networks:
@@ -55,8 +55,6 @@ services:
     networks:
       - mg
     image: redis:7.0
-    ports:
-      - 6379:6379
 
   elastics:
     networks:

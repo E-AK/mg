@@ -4,7 +4,10 @@ define(["ko", "uiComponent", "jquery"], function (ko, Component, $) {
         tasks: ko.observable(""),
         task: ko.observable(""),
         initialize: function (config) {
-            console.log(config);
+            this.createUrl = config.createUrl
+            this.getUrl = config.getUrl
+            this.updateUrl = config.updateUrl
+            this.deleteUrl = config.deleteUrl
             this._super();
         },
         create() {
